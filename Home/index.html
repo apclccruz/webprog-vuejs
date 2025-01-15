@@ -3,21 +3,46 @@
 <head>
 <title>My first Vue page</title>
 <link rel="stylesheet" href="css/style.css">
-
+<link rel="stylesheet" href="css/flexbox-grid.css?version=0.1">  
+<link rel="stylesheet" href="css/bind.css?version=0.1">   
+<link rel="stylesheet" href="css/images.css?version=0.1">   
 </head>
 <body>
- 
-<h1>Example with JavaScript inside {{ }}</h1>
- 
-<p>The 'message' text from the Vue instance is put together with another text and a JavaScript expression. The JavaScript expression creates a random integer between 1 and 6.</p>
- 
+  
+    <h1>My Personal Profile Webpage</h1>
+
+<div class="flex-container">
+  <div>About Me: Hello! I'm Latrell and i am a 3rd year student.</div>
+  <div>Education: I graduated from Pateros Catholic School and went straight to APC for my college</div>
+  <div>Course: Currently studying BSIT.</div>
+  <div>IT Experience: Learned programming languages like Python and Java on my past subjects.</div>
+  <div>Hobbies & Interests: I like to play basketball with my brother and my father.</div>
+  <div>Goals in life / Dream: My goal is to give back my parents sacrifices and make my family proud.</div>
+  <div>Picture Gallery: <img src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.15752-9/467366770_1276776526965976_7075839357345701928_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeHIzkE1yP-2wnbYMKaspbeCsEtUHlpqL2CwS1QeWmovYFNW886jXhFFMJQesNen7DJ9RnBtx_U4fQxUTUGssHYB&_nc_ohc=iFxjwAbLer4Q7kNvgEUkeQs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&oh=03_Q7cD1QFE6EF9CfhWs7zrIqFNqy0EDY6XU51_oZ-txysyUFe8ug&oe=676FF817" width="200" height="200">
+<img src="https://scontent-atl3-2.xx.fbcdn.net/v/t1.15752-9/462575751_1394515955287071_8179195432246208259_n.jpg?stp=dst-jpg_s640x640&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeG-OTbWl4ab5EAbyYYuLzTFClBGROEtex4KUEZE4S17HkIzTlQwZnxWOZJBQNGrybX3_fvydrOmznra7qtfdbs1&_nc_ohc=tHYWf2GJ3IIQ7kNvgFdLHN0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&oh=03_Q7cD1QFCbCWtybzm4CZxWkKA58j2xGuutoepUXxydGEAU6lkKw&oe=677011BE" width="200" height="200">
+</div>
+
 <div id="app">
   {{ message }} <br>
   {{'Random number: ' + Math.ceil(Math.random()*6) }}
+    <div v-bind:class="vueClass">This element is bound to the "pinkBG" class.
+    </div>
 </div>
- 
+
+<div id="app2">
+  <div>
+    <figure v-for="x in manyFoods">
+      <img v-bind:src="x.url">
+      <figcaption>{{ x.name }}</figcaption>
+    </figure>
+  </div>
+</div>
+
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="js/vue.js"></script>
- 
+<script src="js/imagess.js"></script>
+
+
+
 </body>
 </html>
